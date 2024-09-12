@@ -1,0 +1,75 @@
+
+#login{
+    background-image: url('img/background.png');
+    height: 100%;
+    padding-top: 30px;
+}
+
+.contenedorLogo{
+    background-color: black;
+    width: 90%;
+    height: 25%;
+    margin: 0 auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px 5px 15px black;
+    padding-top: 20px;
+}
+.logo{
+    background-color: black;
+    height: 190px;
+    width: 190px;
+    margin:0 auto;
+    background-image: url('img/logo_2.png');
+
+}
+
+.contenedorFormulario{
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 15px black;
+
+}
+
+.formulario{
+    height: 80%;
+    width:90%;
+    background-color: white;
+    margin: 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 40px;
+}
+
+
+.textLogin{
+    border: rgb(219, 212, 212) 2px solid;
+    width: 70%;
+    margin:0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.botonAceptar{
+    background-color: rgb(85, 85, 85);
+    color: white;
+    width: 40%;
+    margin:0 auto;
+    margin-top: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

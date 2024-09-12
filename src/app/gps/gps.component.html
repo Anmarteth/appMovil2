@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Botón para regresar a la página anterior -->
+    <ion-title>GPS App</ion-title>
+
+    <ion-buttons slot="end">
+      <!-- Botón para ir al home -->
+      <ion-button (click)="goHome()">Inicio</ion-button>
+
+      <!-- Botón para ir a la página de GPS -->
+      <ion-button (click)="goToGps()">GPS</ion-button>
+
+      <!-- Botón para ir al historial -->
+      <ion-button (click)="goToHistory()">Historial</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Mapa -->
+  <div id="map" style="height: 300px;"></div>
+
+  <!-- Coordenadas -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Coordenadas:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Latitud: -33.00839</p>
+      <p>Longitud: -71.55164</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

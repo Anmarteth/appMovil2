@@ -1,0 +1,31 @@
+ion-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ion-title {
+  flex: 1;
+}
+
+ion-buttons {
+  display: flex;
+  align-items: center;
+}
+
+ion-tab-button {
+  --color: #000000; /* Cambia el color del texto */
+}
+
+/*  mapa */
+#map {
+  
+  width: 100%; /* Asegúrate de que el mapa ocupe todo el ancho */
+  margin-top: 150px; /* Ajusta este valor para mover el mapa hacia abajo */
+}
+.dispositivo-conectado-card {
+  margin-top: 20px; /* Ajusta este valor según la distancia que quieras */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
