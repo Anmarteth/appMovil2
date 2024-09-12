@@ -10,6 +10,13 @@ export class HomePage {
 
   constructor(private router: Router) {}
 
+    option={
+      slidesPerView:1.5,
+      centeredSlides:true,
+      loop:true,
+      spaceBetween:10,
+      autoplay:true
+    }
   // Método para navegar a la página del GPS
   // Método para ir al home
   goHome() {
