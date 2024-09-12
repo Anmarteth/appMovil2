@@ -1,23 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- Botón para regresar a la página anterior -->
     <ion-title>GPS App</ion-title>
 
     <ion-buttons slot="end">
-      <!-- Botón para ir al home -->
       <ion-button (click)="goHome()">Inicio</ion-button>
-
-      <!-- Botón para ir a la página de GPS -->
       <ion-button (click)="goToGps()">GPS</ion-button>
-
-      <!-- Botón para ir al historial -->
       <ion-button (click)="goToHistory()">Historial</ion-button>
     </ion-buttons>
   </ion-toolbar>
-
-  <ion-content>
-
-  </ion-content>
 </ion-header>
 
+<ion-content>
+  <div class="fondo">
+    <ion-card class="dispositivoConectadoCard">
+      <ion-card-header>
+        <ion-card-title>Dispositivo conectado</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Estado del dispositivo: Conectado</p>
+      </ion-card-content>
 
+    </ion-card>
+  </div>
+  <!-- Cuadro para mostrar "Dispositivo conectado" justo debajo de la barra -->
+</ion-content>
