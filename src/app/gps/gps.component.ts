@@ -30,7 +30,7 @@ export class GpsComponent implements AfterViewInit {
     this.router.navigate(['/history']); // Navega a la página de historial
   }
 
-  // Método para cargar el mapa
+  // Método para cargar el mapa MPBOX = pk.eyJ1IjoiYW5tYXJ0ZXRoIiwiYSI6ImNtMXFrcTIzajAxNGYyanBuZm12bG8zY2sifQ.rOC91vFSsEYOvPaCXFsvaQ
   loadMap() {
     const map = L.map('map').setView([-33.00839, -71.55164], 15);
 
