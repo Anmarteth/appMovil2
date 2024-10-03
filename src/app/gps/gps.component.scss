@@ -20,10 +20,35 @@ ion-toolbar {
   /*  mapa */
   #map {
     
-    width: 100%; /* Asegúrate de que el mapa ocupe todo el ancho */
+    width: 500px; /* Asegúrate de que el mapa ocupe todo el ancho */
+    height: 300px;
+    margin: 0 auto;
     margin-top: 150px; /* Ajusta este valor para mover el mapa hacia abajo */
   }
 
+.coordenadas{
+
+  background-color: rgb(43, 43, 43);
+  margin: 0 auto;
+  width:500px;
+
+}
+
+@media (max-width: 500px) {
+  #map {
+  
+    width: 100%; /* Asegúrate de que el mapa ocupe todo el ancho */
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 150px; /* Ajusta este valor para mover el mapa hacia abajo */
+  }
+  .coordenadas{
+
+    background-color: rgb(43, 43, 43);
+    width: 100%;
+  
+  }
+}
 
   ion-content {
     --background: url('/assets/images/background.png') no-repeat center center;
