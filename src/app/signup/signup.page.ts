@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -6,24 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.page.scss'],
 })
 
-
-
-
-
-
-  // Aquí puedes agregar la lógica para registrarse
-
-
-
-
-
-
 export class SignupPage {
   
+  constructor(private router: Router) { }
+
   usuarios: { nombre: string, contraseña: string }[] = [];
   nombreUsuario: string = '';
   contrasenaUsuario: string = ''; 
-  constructor() {}
 
   onSubmit(event: Event) {
     
@@ -37,5 +27,8 @@ export class SignupPage {
   guardarUsuario(nombre: string, contraseña: string) {
     this.usuarios.push({ nombre, contraseña });
     console.log('Usuarios guardados:', this.usuarios);
+  }
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 }
