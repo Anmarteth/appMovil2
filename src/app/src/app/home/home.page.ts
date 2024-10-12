@@ -25,12 +25,18 @@ export class HomePage {
 
   // Método para ir a la página de GPS
   goToGps() {
-    this.router.navigate(['/gps']);
+    this.router.navigate(['/gpss']);
   }
 
   // Método para ir al historial
   goToHistory() {
-    this.router.navigate(['/history']); // Navega a la página de historial
+    this.router.navigate(['/historial']); // Navega a la página de historial
+    
   }
+
+    // Método para cerrar sesión
+    logout() {
+      this.router.navigate(['/login']); // Navega a la página de inicio de sesión
+    }
 
 }

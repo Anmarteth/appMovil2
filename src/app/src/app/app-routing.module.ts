@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
-import { GpsComponent } from './gps/gps.component';
+import { GpssPage } from './gpss/gpss.page'; 
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomePage
-  },
-  {
-    path: 'gps',
-    component: GpsComponent
   },
   {
     path: 'login',
@@ -21,9 +17,22 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule)
   },
   {
+    path: 'gpss',
+  loadChildren: () => import('./gpss/gpss.module').then(m => m.GpssPageModule)
+  },
+{
+  path: 'historial',
+  loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule)
+},
+
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'historial',
+    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
   }
 ];
 

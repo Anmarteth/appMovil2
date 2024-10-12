@@ -6,6 +6,7 @@
       <ion-button (click)="goHome()">Inicio</ion-button>
       <ion-button (click)="goToGps()">GPS</ion-button>
       <ion-button (click)="goToHistory()">Historial</ion-button>
+      <ion-button (click)="logout()">Cerrar sesión</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +23,7 @@
 
     </ion-card>
 
-    <ion-button class="logout" expand="block" fill="clear" shape="round">
+    <ion-button class="logout" expand="block" fill="clear" shape="round"(click)="logout()">
       Cerrar sesión
     </ion-button>
   </div>
