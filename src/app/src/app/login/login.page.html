@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-content>
+    <div id="login">
+      <div class="contenedorLogo">
+        <div class="logo">
+        </div>
+      </div>
+      <div class="contenedorFormulario">
+        <div class="formulario">
+          <div>
+            <ion-input name="username" [(ngModel)]=username class="textLogin" type="text" placeholder="Nombre de usuario">
+
+            </ion-input>
+          </div>
+          <div>
+            <ion-input name="password" [(ngModel)]=password class="textLogin" type="password" placeholder="Contraseña">
+
+            </ion-input>
+          </div>
+          <ion-button (click)="ingresar()" class="botonAceptar" expand="block" fill="clear" shape="round">
+            Ingresar
+          </ion-button>
+          <ion-button (click)="goToSignup()" expand="block" fill="clear" shape="round">
+            Registrarse
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

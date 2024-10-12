@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <div id="fondo">
+    <div id="logo">
+      <img src="src/../../../../assets/images/Logo.png" alt="Logo" width="100px" height="100px">
+    </div>
+    <div id="form">
+      <ion-card>
+    <form (submit)="onSubmit($event)">
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasenaUsuario" name="contrasenaUsuario" required></ion-input>
+        </ion-item>
+    
+        <ion-button type="submit" expand="full">Crear Cuenta</ion-button>
+        <h1 id="logo">Tambien puedes</h1>
+        <ion-button (click)="goToLogin()" expand="full">Volver al login</ion-button>
+      </form>
+    </ion-card>
+    </div>
+  </div>
+
+  </ion-content>
