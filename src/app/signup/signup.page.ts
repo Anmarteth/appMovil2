@@ -11,21 +11,25 @@ export class SignupPage {
   
   constructor(private router: Router) { }
 
-  usuarios: { nombre: string, contraseña: string }[] = [];
+  usuarios: { correo: string, nombre:string, apellido:string, contraseña: string }[] = [];
+  correoElectronico: string = '';
   nombreUsuario: string = '';
+  apellidoUsuario: string = '';
   contrasenaUsuario: string = ''; 
 
   onSubmit(event: Event) {
     
     event.preventDefault();
-    this.guardarUsuario(this.nombreUsuario, this.contrasenaUsuario);
+    this.guardarUsuario(this.correoElectronico, this.nombreUsuario, this.apellidoUsuario, this.contrasenaUsuario);
 
+    this.correoElectronico = '';
     this.nombreUsuario = '';
+    this.apellidoUsuario = '';
     this.contrasenaUsuario = '';
   }
 
-  guardarUsuario(nombre: string, contraseña: string) {
-    this.usuarios.push({ nombre, contraseña });
+  guardarUsuario(correo: string, nombre: string, apellido: string, contraseña: string) {
+    this.usuarios.push({ correo, nombre, apellido, contraseña });
     console.log('Usuarios guardados:', this.usuarios);
   }
   goToLogin() {

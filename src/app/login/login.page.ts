@@ -8,7 +8,7 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  username: string = "";
+  correoElectronico: string = "";
   password: string = "";
 
   constructor(public alerta: AlertController, public toast: ToastController, private router: Router) { }
@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
   }
 
   ingresar() {
-    if (this.username === "" || this.password === "") {
+    if (this.correoElectronico === "" || this.password === "") {
       console.log("no puede haber valores vacíos");
       this.mensajeError();
     } else {
