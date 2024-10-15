@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Router } from '@angular/router'; // Importa Router para la navegación
@@ -44,3 +45,8 @@ export class GpssPage implements OnInit {
   }
 
 }
+
+
+
+
+
