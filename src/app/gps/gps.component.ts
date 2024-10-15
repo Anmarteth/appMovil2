@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Router } from '@angular/router'; // Importa Router para la navegación
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-gps',
@@ -43,3 +44,9 @@ export class GpsComponent implements AfterViewInit {
       .openPopup();
   }
 }
+
+const printCurrentPosition = async () => {
+  const coordinates = await Geolocation.getCurrentPosition();
+
+  console.log('Current position:', coordinates);
+};
