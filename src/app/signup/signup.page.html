@@ -5,32 +5,32 @@
     </div>
     <div id="form">
       <ion-card>
-    <form (submit)="onSubmit($event)">
-        <ion-item>
-          <ion-label position="floating">Correo Electrónico</ion-label>
-          <ion-input type="text" [(ngModel)]="correoElectronico" name="correoElectronico" required></ion-input>
-        </ion-item>
+        <form (submit)="onSubmit($event)">
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="text" [(ngModel)]="correoElectronico" name="correoElectronico" required></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Apellido</ion-label>
-          <ion-input type="text" [(ngModel)]="apellidoUsuario" name="apellidoUsuario" required></ion-input>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="contrasenaUsuario" name="contrasenaUsuario" required></ion-input>
-        </ion-item>
-    
-        <ion-button type="submit" expand="full">Crear Cuenta</ion-button>
-        <h1 id="logo">Tambien puedes</h1>
-        <ion-button (click)="goToLogin()" expand="full">Volver al login</ion-button>
-      </form>
-    </ion-card>
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" [(ngModel)]="apellidoUsuario" name="apellidoUsuario" required></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="contrasenaUsuario" name="contrasenaUsuario" required></ion-input>
+          </ion-item>
+      
+          <ion-button class="boton" type="submit" expand="full">Crear Cuenta</ion-button>
+          <h1 id="logo">Tambien puedes</h1>
+          <ion-button class="boton" (click)="goToLogin()" expand="full">Volver al login</ion-button>
+        </form>
+      </ion-card>
     </div>
   </div>
 
