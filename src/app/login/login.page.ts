@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import {FirebaseLoginService} from '../servicios/firebase-login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginPage implements OnInit {
   correoElectronico: string = "";
   password: string = "";
 
-  constructor(public alerta: AlertController, public toast: ToastController, private router: Router) { }
+  constructor(public alerta: AlertController, public toast: ToastController, private router: Router, private loginFirebase:FirebaseLoginService) { }
 
   ngOnInit() {}
 
@@ -42,9 +43,14 @@ export class LoginPage implements OnInit {
       console.log("no puede haber valores vacíos");
       this.mensajeError();
     } else {
-      console.log("inicio exitoso");
-      this.mensajeCorrecto();
-      this.router.navigate(["/home"]);
+      this.loginFirebase.login(this.correoElectronico ,this.password).then(()=>{
+        console.log("inicio exitoso");
+        this.mensajeCorrecto();
+        this.router.navigate(["/home"]).catch();
+      }).catch(()=>{
+        console.log("Error al iniciar sesion");
+        this.mensajeError();
+      });
     }
   }
 }

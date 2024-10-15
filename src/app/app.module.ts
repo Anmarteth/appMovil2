@@ -5,6 +5,12 @@ import { RouteReuseStrategy } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePage } from './home/home.page';
+import { environment } from 'src/environments/environment';
+import {AngularFireModule} from '@angular/fire/compat';
+import{AngularFireAuthModule} from '@angular/fire/compat/auth';
+
+//firebase
+
 // Elimina GpssPage de aquí
 // import { GpssPage } from './gpss/gpss.page';
 
@@ -18,7 +24,9 @@ import { HomePage } from './home/home.page';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
