@@ -18,4 +18,7 @@ export class FirebaseLoginService {
     });
   }
 
+  registro(email:string, pass:string){
+    return this.afAuth.createUserWithEmailAndPassword(email,pass);
+  }
 }
