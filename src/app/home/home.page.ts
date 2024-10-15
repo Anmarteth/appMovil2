@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Para la navegación
-
+import {FirebaseLoginService} from '../servicios/firebase-login.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router'; // Para la navegación
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private logoutfireDatabase:FirebaseLoginService) {}
 
     option={
       slidesPerView:1.5,
@@ -36,7 +36,7 @@ export class HomePage {
 
     // Método para cerrar sesión
     logout() {
-      this.router.navigate(['/login']); // Navega a la página de inicio de sesión
+      this.logoutfireDatabase.logout();
     }
 
 }
