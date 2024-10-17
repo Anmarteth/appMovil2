@@ -1,7 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { Router } from '@angular/router'; // Importa Router para la navegación
+import { Router } from '@angular/router'; // Importa Router para la navegación}
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-gpss',
@@ -32,21 +32,18 @@ export class GpssPage implements OnInit {
   }
 
   // Método para cargar el mapa
-  loadMap() {
-    const map = L.map('map').setView([-33.00839, -71.55164], 15); // Asegúrate de que 'map' coincida con el ID del div
-  
+  async loadMap() {
+    const coordinates = await Geolocation.getCurrentPosition();
+
+    const map = L.map('map').setView([coordinates.coords.latitude, coordinates.coords.longitude], 15); // Asegúrate de que 'map' coincida con el ID del div
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
   
-    L.marker([-33.00839, -71.55164]).addTo(map)
+    L.marker([coordinates.coords.latitude, coordinates.coords.longitude]).addTo(map)
       .bindPopup('Ubicación seleccionada')
       .openPopup();
   }
 
 }
-
-
-
-
-
