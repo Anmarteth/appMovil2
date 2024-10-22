@@ -1,0 +1,50 @@
+
+ion-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ion-title {
+  flex: 1;
+}
+
+ion-buttons {
+  display: flex;
+  align-items: center;
+}
+
+ion-tab-button {
+  --color: #000000; /* Cambia el color del texto */
+}
+
+/*  mapa */
+#map {
+  
+  width: 100%; /* Asegúrate de que el mapa ocupe todo el ancho */
+  margin-top: 150px; /* Ajusta este valor para mover el mapa hacia abajo */
+}
+
+.dispositivoConectadoCard{
+  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+}
+
+.fondo{
+  background-image: url('./img/background.png');
+  height: 100%;
+  padding-top: 40px;
+  
+}
+
+.logout{
+
+  height: 60px;
+  width: 200px;
+  background-color: red;
+  color:white;
+  margin:0 auto;
+  margin-top: 100%;
+  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+  
+
+}
