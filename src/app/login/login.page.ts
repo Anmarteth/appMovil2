@@ -32,7 +32,7 @@ export class LoginPage implements OnInit {
   async mensajeError() {
     const alert = await this.alerta.create({
       header: 'Error de inicio',
-      message: 'No puede ingresar con campos vacíos',
+      message: 'Datos inválidos',
       buttons: ['Aceptar']
     });
     await alert.present();
