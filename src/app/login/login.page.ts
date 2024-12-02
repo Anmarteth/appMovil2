@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import {FirebaseLoginService} from '../servicios/firebase-login.service';
+import { UserControllerService } from '../servicios/user-controller.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +13,9 @@ import {FirebaseLoginService} from '../servicios/firebase-login.service';
 export class LoginPage implements OnInit {
   correoElectronico: string = "";
   password: string = "";
+  user:any;
 
-  constructor(public alerta: AlertController, public toast: ToastController, private router: Router, private loginFirebase:FirebaseLoginService) { }
+  constructor(public alerta: AlertController, public toast: ToastController, private router: Router, private loginFirebase:FirebaseLoginService, private usercontroler:UserControllerService) { }
 
   ngOnInit() {}
 
@@ -44,6 +47,10 @@ export class LoginPage implements OnInit {
       this.mensajeError();
     } else {
       this.loginFirebase.login(this.correoElectronico ,this.password).then(()=>{
+        this.usercontroler.ObtenerDatos(this.correoElectronico).subscribe(user => {
+          this.user = user;
+        })
+
         console.log("inicio exitoso");
         this.mensajeCorrecto();
         this.router.navigate(["/home"]).catch();
