@@ -1,0 +1,37 @@
+.historial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .historial-card {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .actualizar-card {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  ion-content {
+    --background: url('/assets/images/background.png') no-repeat center center;
+    --background-size: cover; /* Ajusta esto para el tamaño deseado */
+    --background-size: 10000% 10000%; /* Estirará la imagen para cubrir el área del contenido */
+    
+  }
+  
