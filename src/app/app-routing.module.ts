@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { GpssPage } from './gpss/gpss.page'; 
-import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomePage,
-    canActivate:[AuthGuard]
+    component: HomePage
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
-
   },
   {
     path: 'signup',
@@ -21,13 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'gpss',
-  loadChildren: () => import('./gpss/gpss.module').then(m => m.GpssPageModule),
-  canActivate:[AuthGuard]
+  loadChildren: () => import('./gpss/gpss.module').then(m => m.GpssPageModule)
   },
 {
   path: 'historial',
-  loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule),
-  canActivate:[AuthGuard]
+  loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule)
 },
 
   {
