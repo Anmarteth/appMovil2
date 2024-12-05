@@ -8,6 +8,9 @@ import { HomePage } from './home/home.page';
 import { environment } from 'src/environments/environment';
 import {AngularFireModule} from '@angular/fire/compat';
 import{AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
+
 
 //firebase
 
@@ -28,6 +31,7 @@ import{AngularFireAuthModule} from '@angular/fire/compat/auth';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireModule,
     AngularFireAuthModule,
+    IonicStorageModule.forRoot(),
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

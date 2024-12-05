@@ -3,26 +3,27 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { GpssPage } from './gpss/gpss.page'; 
 
+
 const routes: Routes = [
   {
     path: 'home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
   },
   {
     path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule)
+    loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule),
   },
   {
     path: 'gpss',
-  loadChildren: () => import('./gpss/gpss.module').then(m => m.GpssPageModule)
+  loadChildren: () => import('./gpss/gpss.module').then(m => m.GpssPageModule),
   },
 {
   path: 'historial',
-  loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule)
+  loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule),
 },
 
   {
@@ -30,10 +31,7 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: 'historial',
-    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
-  }
+
 ];
 
 @NgModule({

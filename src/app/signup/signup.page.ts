@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import {FirebaseLoginService} from '../servicios/firebase-login.service';
+import { FirestoreService } from '../servicios/firestore.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,13 +12,15 @@ import {FirebaseLoginService} from '../servicios/firebase-login.service';
 
 export class SignupPage {
   
-  constructor(public alerta: AlertController, public toast: ToastController,private router: Router,private regFirebase:FirebaseLoginService) { }
+  constructor(public alerta: AlertController, public toast: ToastController,private router: Router,private regFirebase:FirebaseLoginService, public firestoreService:FirestoreService) { }
 
   usuarios: { correo: string, nombre:string, apellido:string, contraseña: string }[] = [];
   correoElectronico: string = '';
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
-  contrasenaUsuario: string = ''; 
+  contrasenaUsuario: string = '';
+  
+  
 
   onSubmit(event: Event) {
     
@@ -49,12 +52,18 @@ export class SignupPage {
 
 
   guardarUsuario(correo: string, nombre: string, apellido: string, contraseña: string) {
+    const data ={
+      nombreUsuario: nombre,
+      apellidoUsuario: apellido,
+      correoUsuario : correo 
+    };
+    const path ="Usuarios/";
+
+    this.firestoreService.createDoc(data,path,correo);
     this.usuarios.push({ correo, nombre, apellido, contraseña });
 
     this.regFirebase.registro(correo ,contraseña).then(()=>{
-      console.log("inicio exitoso");
       this.mensajeCorrecto();
-      this.router.navigate(["/home"]).catch();
     }).catch(()=>{
       console.log("Error al iniciar sesion");
       this.mensajeError();

@@ -4,6 +4,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 import {FirebaseLoginService} from '../servicios/firebase-login.service';
 import { UserControllerService } from '../servicios/user-controller.service';
 import { Storage } from '@ionic/storage-angular';
+import { FirestoreService } from '../servicios/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,13 @@ export class LoginPage implements OnInit {
   password: string = "";
   user:any;
 
-  constructor(public alerta: AlertController, public toast: ToastController, private router: Router, private loginFirebase:FirebaseLoginService, private usercontroler:UserControllerService) { }
+  constructor(public alerta: AlertController, public toast: ToastController, private router: Router, private loginFirebase:FirebaseLoginService, private usercontroler:UserControllerService, private storage : Storage,public database:FirestoreService,) {
 
-  ngOnInit() {}
+   }
+
+  async ngOnInit() {
+    await this.storage.create();
+  }
 
   // La función goToSignup debe estar fuera de ngOnInit
   goToSignup() {
@@ -50,12 +55,12 @@ export class LoginPage implements OnInit {
         this.usercontroler.ObtenerDatos(this.correoElectronico).subscribe(user => {
           this.user = user;
         })
+        this.storage.set("correoElectronico",this.correoElectronico);
 
         console.log("inicio exitoso");
         this.mensajeCorrecto();
         this.router.navigate(["/home"]).catch();
       }).catch(()=>{
-        console.log("Error al iniciar sesion");
         this.mensajeError();
       });
     }

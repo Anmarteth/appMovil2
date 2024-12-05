@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Para la navegación
 import {FirebaseLoginService} from '../servicios/firebase-login.service';
+import { FirestoreService } from '../servicios/firestore.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,7 +9,7 @@ import {FirebaseLoginService} from '../servicios/firebase-login.service';
 })
 export class HomePage {
 
-  constructor(private router: Router, private logoutfireDatabase:FirebaseLoginService) {}
+  constructor(private router: Router, private logoutfireDatabase:FirebaseLoginService, database:FirestoreService) {}
 
     option={
       slidesPerView:1.5,
